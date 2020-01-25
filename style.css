@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+}
+.main, .content {
+  background-color: red;
+  height: 100vh;
+}
+
+img {
+  height: 20vh;
+}
+
+/* START Grid */
+.container {
+  display: grid;
+  grid-template-columns: 20vw 20vw 20vw;
+  grid-template-rows: 20vh 20vh 20vh;
+  grid-template-areas: 
+  "left ... right"
+  "... middle ..."
+  "b-left ... b-right"
+  ;
+  justify-content: center;
+  align-content: center;
+  width: 70%;
+  background-color: blue;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.hex {
+  align-self: center;
+  justify-self: center;
+}
+
+#hex-0 {
+  height: 25vh;
+}
+
+
+#hex-1 {
+  grid-area: left;
+}
+
+#hex-2 {
+  grid-area: right;
+}
+
+#hex-3 {
+  grid-area: b-left;
+}
+
+#hex-4 {
+  grid-area: b-right;
+}
+
+.middle {
+  grid-area: middle;
+  filter: invert(48%) sepia(79%) saturate(100%) hue-rotate(500deg) brightness(118%) contrast(119%);
+ }
+
+/* Hexagon */
+.child-hex {
+  display: none;
+}
+
+p {
+  display: inline;
+}
+
+p {
+  position: absolute;
+  left: 50%;
+  top: 49%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  font-size: 1.5em;
+  color: white;
+  text-align: center;
+}
+
+#close {
+  display: none;
+}
+
+input {
+  /* opacity: 0; */
+  position: relative;
+  width: 200px; 
+  height: 200px; 
+  z-index: 10;
+  margin: 9.5vw 23vw;
+  opacity: 0;
+}
+
+/* Class Margin and Padding */
+.center {
+
+}
+
+/* Animation */
+.container:hover .child-hex {
+  filter: blur(10px);
+}
+
+.container .middle:hover {
+  filter: blur(0);
+}
+
+input:checked ~ .child-hex {
+  display: block;
+  /* transform: translate(50px, 100px); */
+}
+
+input:hover ~ .middle {
+  transform: scale(2, 2);
+}
+
+input:hover ~ p.p-main {
+  transform: scale(2, 2);
+  left: 46%;
+  top: 46%;
+  /* transform: translate(-50%, -50%); */
+}
+
+input:checked  {
+  z-index: 10;
+  margin: 9.5vw 3vw;
+  /* transform: translate(50px, 100px); */
+}
+
+input:checked ~ #open {
+  display: none;
+}
+
+input:checked ~ #close {
+  display: inline;
+}
+
+.main .container .child-hex:hover {
+  display: block;
+  filter: blur(0);
+  transform: scale(2, 2);
+}
+
+/* .content {
+  display: none;
+} */
+
+.content:hover ~:not(.content) {
+  /* display: block; */
+  filter: blur(10px);
+}
+
