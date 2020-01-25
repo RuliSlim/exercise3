@@ -2,7 +2,7 @@
   margin: 0;
 }
 .main, .content {
-  background-color: red;
+  background-color: black;
   height: 100vh;
 }
 
@@ -10,8 +10,25 @@ img {
   height: 20vh;
 }
 
-/* START Grid */
-.container {
+
+.background {
+  position: absolute;
+  width: 70%;
+  /* background-color: black; */
+  background-image: url("./assets/image/pubg.png");
+  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+  height: 100vh;
+  z-index: 1;
+  transition: 2s;
+}
+
+/* HOME SECTION*/
+/* ================ */
+.container, .content {
   display: grid;
   grid-template-columns: 20vw 20vw 20vw;
   grid-template-rows: 20vh 20vh 20vh;
@@ -23,7 +40,7 @@ img {
   justify-content: center;
   align-content: center;
   width: 70%;
-  background-color: blue;
+  background: radial-gradient(white, yellow, black);
   margin: 0 auto;
   height: 100vh;
 }
@@ -64,23 +81,24 @@ img {
   display: none;
 }
 
-p {
-  display: inline;
-}
-
-p {
+.nav {
   position: absolute;
+  display: inline;
   left: 50%;
   top: 49%;
   transform: translate(-50%, -50%);
   z-index: 0;
-  font-size: 1.5em;
+  font-size: 1.5vw;
   color: white;
   text-align: center;
 }
 
 #close {
   display: none;
+}
+
+.nav, .hex {
+  z-index: 8;
 }
 
 input {
@@ -94,9 +112,6 @@ input {
 }
 
 /* Class Margin and Padding */
-.center {
-
-}
 
 /* Animation */
 .container:hover .child-hex {
@@ -152,3 +167,32 @@ input:checked ~ #close {
   filter: blur(10px);
 }
 
+#hex-1:hover ~ .background {
+  /* background-color: green; */
+  background: radial-gradient(blue, red, green);
+  transition: 2s;
+  background-image: url("./assets/image/pubg-logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+
+
+
+/* SECTION CONTENT */
+/* .nav-aside p {
+  position: relative;
+  display: inline;
+  left: 1;
+  top: 49%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  font-size: 1.5em;
+  color: white;
+  text-align: center;
+} */
+.home {
+  position: relative;
+  left: 3.75vw;
+  top: -6.5vw;
+}
