@@ -1,9 +1,15 @@
 * {
   margin: 0;
+  font-family: 'Crete Round', serif;
+  font-size: large;
 }
+
+a {
+  text-decoration: none;
+}
+
 .main, .content {
-  background-color: black;
-  height: 100vh;
+  background: black
 }
 
 img {
@@ -14,7 +20,6 @@ img {
 .background {
   position: absolute;
   width: 70%;
-  /* background-color: black; */
   background-image: url("./assets/image/pubg.png");
   background-size: cover;
   background-size: contain;
@@ -28,7 +33,7 @@ img {
 
 /* HOME SECTION*/
 /* ================ */
-.container, .content {
+.container {
   display: grid;
   grid-template-columns: 20vw 20vw 20vw;
   grid-template-rows: 20vh 20vh 20vh;
@@ -89,8 +94,8 @@ img {
   transform: translate(-50%, -50%);
   z-index: 0;
   font-size: 1.5vw;
-  color: white;
   text-align: center;
+  color: chocolate;
 }
 
 #close {
@@ -102,7 +107,6 @@ img {
 }
 
 input {
-  /* opacity: 0; */
   position: relative;
   width: 200px; 
   height: 200px; 
@@ -111,11 +115,9 @@ input {
   opacity: 0;
 }
 
-/* Class Margin and Padding */
-
 /* Animation */
 .container:hover .child-hex {
-  filter: blur(10px);
+  filter: blur(2px);
 }
 
 .container .middle:hover {
@@ -124,7 +126,6 @@ input {
 
 input:checked ~ .child-hex {
   display: block;
-  /* transform: translate(50px, 100px); */
 }
 
 input:hover ~ .middle {
@@ -135,13 +136,11 @@ input:hover ~ p.p-main {
   transform: scale(2, 2);
   left: 46%;
   top: 46%;
-  /* transform: translate(-50%, -50%); */
 }
 
 input:checked  {
   z-index: 10;
   margin: 9.5vw 3vw;
-  /* transform: translate(50px, 100px); */
 }
 
 input:checked ~ #open {
@@ -158,18 +157,7 @@ input:checked ~ #close {
   transform: scale(2, 2);
 }
 
-/* .content {
-  display: none;
-} */
-
-.content:hover ~:not(.content) {
-  /* display: block; */
-  filter: blur(10px);
-}
-
 #hex-1:hover ~ .background {
-  /* background-color: green; */
-  background: radial-gradient(blue, red, green);
   transition: 2s;
   background-image: url("./assets/image/pubg-logo.png");
   background-size: contain;
@@ -177,22 +165,203 @@ input:checked ~ #close {
   background-position-y: center;
 }
 
+#hex-2:hover ~ .background {
+  transition: 2s;
+  background-image: url("./assets/image/Map4-savage.jpg");
+  filter: grayscale(100%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
 
+#hex-3:hover ~ .background {
+  transition: 2s;
+  background-image: url("./assets/image/guns-34272.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+
+#hex-4:hover ~ .background {
+  transition: 2s;
+  background-image: url("./assets/image/Plane_Profile_Image.png");
+  filter: grayscale(100%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
 
 /* SECTION CONTENT */
-/* .nav-aside p {
-  position: relative;
-  display: inline;
-  left: 1;
-  top: 49%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-  font-size: 1.5em;
-  color: white;
-  text-align: center;
-} */
 .home {
   position: relative;
-  left: 3.75vw;
-  top: -6.5vw;
+  left: 0vw;
+  top: -12.5vh;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 5fr;
+  justify-content: center;
+  align-content: center;
+  width: 70%;
+  background: radial-gradient(white, yellow, black);
+  margin: 0 auto;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.title {
+  height: 1.5em;
+  margin-top: 2em;
+  font-size: 2.5em;
+  text-align: center;
+  background-color: gray;
+  opacity: 80%;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+  padding: 1em;
+  color: black;
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: yellow;
+}
+
+.aside {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+    "nav text text"
+    "nav2 text text"
+    "nav3 text text"
+  ;
+  max-height: 100vh;
+  width: 60vw;
+}
+
+.text-container {
+  grid-template-columns: 15vw 15vw;
+  grid-gap: 5vw 10vw;
+  grid-area: text;
+  align-items: center;
+}
+
+.text-content {
+  display: none;
+  z-index: 100;
+  position: relative;
+  color: white;
+  background-color: dimgray;
+  opacity: 80%;
+  padding: 2em;
+  border-radius: 2em;
+  font-size: 1.02em;
+}
+
+
+#nav1 {
+  grid-area: nav;
+}
+
+#nav2 {
+  grid-area: nav2;
+}
+
+#nav3 {
+  grid-area: nav3;
+}
+
+.nav-aside {
+  display: flex;
+  flex-direction: column;
+  grid-area: nav;
+  text-align: center;
+}
+
+.content-background {
+  position: relative;
+  right: -170%;
+  bottom: 55%;
+  background-image: url("./assets/image/pubg.png");
+  background-size: 20em;
+  background-repeat: no-repeat;
+  background-position: right;
+  margin: 0 -10em;
+  height: 100vh;
+  z-index: 1;
+  transition: 2s;
+}
+
+#nav1:hover ~ .content-background {
+  transition: 2s;
+  background-image: url("./assets/image/pubg-logo.png");
+  background-size: 20em;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+
+#nav2:hover ~ .text-container #text-info1{
+  display: block;
+}
+
+#nav3:hover ~ .text-container #text-info2{
+  display: block;
+}
+
+.nav-aside #info2:hover #text-info2 {
+  display: block;
+}
+
+/* Content 2 */
+
+#nav2:hover ~ .content-background#content2 {
+  transition: 2s;
+  background-image: url("./assets/image/Pubg_erangel_map.jpg");
+  background-size: 20em;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+
+#nav3:hover ~ .content-background#content2 {
+  transition: 2s;
+  background-image: url("./assets/image/sanhok_map.jpg");
+  background-size: 20em;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+
+/* Content 3 */
+#nav2:hover ~ .content-background#content3 {
+    transition: 2s;
+    background-image: url("./assets/image/AKM\ \(1\).png");
+    background-size: 20em;
+    background-repeat: no-repeat;
+    background-position-y: center;
+  }
+  
+  #nav3:hover ~ .content-background#content3 {
+    transition: 2s;
+    background-image: url("./assets/image/Icon_weapon_Kar98k.png");
+    background-size: 15em;
+    /* top: 50em; */
+    background-repeat: no-repeat;
+    background-position-y: center;
+  }
+
+/* Content 4 */
+#nav2:hover ~ .content-background#content4 {
+  transition: 2s;
+  background-image: url("./assets/image/Motorcycle-without-sidecar-1.png");
+  background-size: 20em;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+  
+#nav3:hover ~ .content-background#content4 {
+  transition: 2s;
+  background-image: url("./assets/image/Sedan_dev.jpg");
+  background-size: 20em;
+  background-repeat: no-repeat;
+  background-position-y: center;
 }
